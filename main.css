@@ -23,7 +23,9 @@ body {
 
 .photo {
     flex: 0 0 auto;
-    margin-right: 20px;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 30px;
 }
 
 .photo img {
@@ -45,7 +47,7 @@ body {
 
 .section.full-width {
     width: calc(100% - 40px);
-    padding: 20px;
+    padding: 10px;
     background: #f9f9f9;
     border-radius: 10px;
     margin: 10px 20px;
@@ -58,13 +60,13 @@ body {
     width: 100%;
     height: 2px;
     background: #ddd;
-    margin: 0 auto 20px;
+    margin: 0 auto 10px;
 }
 
 .main-content {
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 30px;
 }
 
 .left-column {
@@ -80,18 +82,16 @@ body {
 
 .bottom-sections {
     display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
+    flex-direction: column;
     gap: 20px;
 }
-
 
 .section:not(:last-child)::after {
     content: "";
     display: block;
     height: 2px;
     background: #ddd;
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 h2 {
@@ -128,33 +128,48 @@ a:hover {
 }
 
 @media (max-width: 992px) {
+    .photo {
+        margin-right: 35px;
+        margin-left: 35px;
+    }
+}
+
+@media (max-width: 768px) {
 
     .photo {
-        margin-right: 40px;
-        margin-left: 40px;
+        margin-top: 20px;
+        margin-right: 20px;
+
+    }
+
+    .photo img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .section:not(:last-child)::after {
+        display: none;
     }
 
     .main-content {
         flex-direction: column;
     }
 
-    .left-column, .right-column {
-        flex: 1 0 auto;
-        width: 100%;
+    .right-column {
+        order: -1;
     }
 
-    .section.full-width {
-        width: calc(100% - 50px);
-        margin: 10px 20px;
+    .bottom-sections {
+        flex-direction: row;
+        justify-content: space-between;
     }
-}
 
-@media (max-width: 768px) {
+    .left-column {
+        order: 2;
+    }
 
-
-    .photo img {
-        width: 160px;
-        height: 160px;
+    #experiencia {
+        order: 1;
     }
 }
 
@@ -173,6 +188,7 @@ a:hover {
         padding: 10px;
         margin: 10px 10px;
     }
+    
 
     h2 {
         font-size: 1.2em;
@@ -180,5 +196,23 @@ a:hover {
 
     p {
         font-size: 0.9em;
+    }
+
+    .left-column {
+        order: 2;
+    }
+
+    .right-column {
+        order: 1;
+    }
+
+    .bottom-sections {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .bottom-sections .section {
+        flex: 1;
     }
 }
