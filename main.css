@@ -178,18 +178,9 @@ a:hover {
         padding: 10px;
     }
 
-    .header {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .photo {
-        margin: 0 auto 10px; /* Center the photo and add spacing */
-    }
-
     .photo img {
-        width: 160px;
-        height: 160px;
+        width: 120px;
+        height: 120px;
     }
 
     .contactos {
