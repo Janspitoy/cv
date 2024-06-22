@@ -178,9 +178,22 @@ a:hover {
         padding: 10px;
     }
 
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .photo {
+        margin: 0 auto 10px; /* Center the photo and add spacing */
+    }
+
     .photo img {
-        width: 140px;
-        height: 140px;
+        width: 160px;
+        height: 160px;
+    }
+
+    .contactos {
+        margin-top: 20px; /* Add space between photo and contact details */
     }
 
     .section.full-width {
